@@ -4,7 +4,6 @@ body {
   display: flex;
   width: 100vw;
   height: 100vh;
-  justify-content: center;
   align-items: center;
   background-color: rgb(187, 128, 255);
   font-size: 30px;

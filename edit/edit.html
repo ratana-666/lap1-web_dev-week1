@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>edit</title>
+  <script src="edit.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+  <body class="">
+    <nav class="bg-gray-200 p-3 flex justify-between w-full">
+      <div class="flex gap-10 ml-10 items-center">
+        <a href="../main_page.html"><img src="../img/logo.png" alt="logo" class="w-15 ml"></a>
+        <p class="text-lg font-bold">Quiz App</p>
+      </div>
+
+      <div class="flex items-center gap-10 mr-10">
+        <a href="../edit/edit.html" class="text-lg font-bold border-2 rounded-full w-[100px] text-center p-2">Edit</a>
+        <a href="../play/index.html"class="text-lg font-bold border-2 rounded-full w-[100px] text-center p-2 ">Play</a>
+      </div>
+    </nav>
+
+    <div class="container mx-auto p-6">
+      <div class="flex justify-between items-center mb-6">
+        <h1 class="text-3xl font-bold">Manage Questions</h1>
+        <div class="flex space-x-4">
+          <button id="create-question-btn" class="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition">
+            Create Question
+          </button>
+        </div>
+      </div>
+
+    </div>
+    
+    <div id="questions-dialog" class="hidden fixed inset-0 bg-black/50 flex items-center justify-center z-50">
+      <div class="bg-white rounded-xl w-[700px] p-6 shadow-xl">
+
+        <!-- Header -->
+        <header id="dialog-header" class="text-2xl font-bold mb-10">Create Question</header>
+
+        <!-- Title Input -->
+        <div class="flex flex-col mb-4">
+          <label for="question-title" class="font-semibold mb-1">Title</label>
+          <input type="text" id="question-title" placeholder="Question title" class="border rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+        </div>
+
+        <!-- Answers -->
+        <div class="flex flex-col gap-2 mb-4">
+          <label class="font-semibold">Answers</label>
+          <input type="text" id="answerA" placeholder="Answer A" class="border rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+          <input type="text" id="answerB" placeholder="Answer B" class="border rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+          <input type="text" id="answerC" placeholder="Answer C" class="border rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+          <input type="text" id="answerD" placeholder="Answer D" class="border rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+        </div>
+
+        <!-- Correct Choice -->
+        <div class="flex flex-col gap-2 mb-4">
+          <label class="font-semibold">Correct Choice</label>
+          <label class="flex items-center p-2 border rounded-md cursor-pointer hover:bg-blue-50">
+            <input type="radio" name="correct" value="answerA" class="mr-2 accent-blue-600"> Option A
+          </label>
+          <label class="flex items-center p-2 border rounded-md cursor-pointer hover:bg-blue-50">
+            <input type="radio" name="correct" value="answerB" class="mr-2 accent-blue-600"> Option B
+          </label>
+          <label class="flex items-center p-2 border rounded-md cursor-pointer hover:bg-blue-50">
+            <input type="radio" name="correct" value="answerC" class="mr-2 accent-blue-600"> Option C
+          </label>
+          <label class="flex items-center p-2 border rounded-md cursor-pointer hover:bg-blue-50">
+            <input type="radio" name="correct" value="answerD" class="mr-2 accent-blue-600"> Option D
+          </label>
+        </div>
+
+        <!-- Buttons -->
+        <div class="flex justify-end gap-4 mt-4">
+          <button
+            id="cancel-btn"
+            class="px-4 py-2 bg-gray-300 text-gray-700 rounded-md hover:bg-gray-400 transition"
+          >
+            Cancel
+          </button>
+          <button 
+            id="save-question-btn"
+            class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition"
+          >
+            Save
+          </button>
+        </div>
+      </div>
+    </div>
+    <div id="questions-container" class="flex flex-col gap-4 ml-6"></div>
+
+  </body>
+</html>
